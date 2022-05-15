@@ -7,14 +7,14 @@
  */
 unsigned int countDigits(int num)
 {
-  register int digits = 0;
+	register int digits = 0;
 
-  while (num > 0)
-  {
-    digits++;
-    num /= 10;
-  }
-  return (digits);
+	while (num > 0)
+	{
+		digits++;
+		num /= 10;
+	}
+	return (digits);
 }
 
 /**
@@ -24,11 +24,11 @@ unsigned int countDigits(int num)
  */
 int countArgs(char **args)
 {
-  register int i = 0;
+	register int i = 0;
 
-  while (args[i])
-    i++;
-  return (i);
+	while (args[i])
+		i++;
+	return (i);
 }
 
 /**
@@ -38,24 +38,25 @@ int countArgs(char **args)
  */
 char *itoa(unsigned int num)
 {
-  register int digits = 0;
-  char *str;
+	register int digits = 0;
+	char *str;
 
-  digits += countDigits(num);
-  str = malloc(sizeof(char) * (digits + 1));
-  if (!str)
-  {
-    perror("Malloc: failed\n");
-    exit(errno);
-  }
-  insertNullByte(str, digits);
-  while (num > 0)
-  {
-    str[digits - 1] = num % 10 + '0';
-    num = num / 10;
-    digits--;
-  }
-  return (str);
+	digits += countDigits(num);
+	str = malloc(sizeof(char) * (digits + 1));
+	if (!str)
+	{
+		perror("Malloc: failed\n");
+		exit(errno);
+	}
+	insertNullByte(str, digits);
+
+	while (num > 0)
+	{
+		str[digits - 1] = num % 10 + '0';
+		num = num / 10;
+		digits--;
+	}
+	return (str);
 }
 
 /**
@@ -65,20 +66,20 @@ char *itoa(unsigned int num)
  */
 int _atoi(char *s)
 {
-  register int i = 0;
-  unsigned long num = 0;
+	register int i = 0;
+	unsigned long num = 0;
 
-  while (s[i])
-  {
-    if (s[i] >= '0' && s[i] <= '9')
-      num = num * 10 + s[i] - '0';
-    else
-      return (-1);
-    i++;
-  }
-  if (num > INT_MAX)
-  {
-    return (-1);
-  }
-  return (num);
+	while (s[i])
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+			num = num * 10 + s[i] - '0';
+		else
+			return (-1);
+		i++;
+	}
+	if (num > INT_MAX)
+	{
+		return (-1);
+	}
+	return (num);
 }
