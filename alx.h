@@ -30,8 +30,8 @@ extern char **environ;
  */
 typedef struct linkedList
 {
-  char *string;
-  struct linkedList *next;
+	char *string;
+	struct linkedList *next;
 } linked_l;
 
 /**
@@ -48,15 +48,15 @@ typedef struct linkedList
  */
 typedef struct configurations
 {
-  linked_l *env;
-  char **envList;
-  char **args;
-  char *buffer;
-  char *path;
-  char *fullPath;
-  char *shellName;
-  unsigned int lineCounter;
-  int errorStatus;
+	linked_l *env;
+	char **envList;
+	char **args;
+	char *buffer;
+	char *path;
+	char *fullPath;
+	char *shellName;
+	unsigned int lineCounter;
+	int errorStatus;
 } config;
 
 /**
@@ -66,8 +66,8 @@ typedef struct configurations
  */
 typedef struct builtInCommands
 {
-  char *command;
-  int (*func)(config *build);
+	char *command;
+	int (*func)(config *build);
 } type_b;
 
 /* main */
