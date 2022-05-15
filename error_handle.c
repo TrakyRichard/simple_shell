@@ -10,7 +10,7 @@ void errorHandler(config *build)
   static char error[BUFSIZE];
   char *ptr, *alpha;
 
-  alpha = itoa(build->lineCounter);
+  alpha = ownItoa(build->lineCounter);
   _strcat(error, build->shellName);
   _strcat(error, ": ");
   _strcat(error, alpha);

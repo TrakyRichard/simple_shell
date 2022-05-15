@@ -32,11 +32,11 @@ int countArgs(char **args)
 }
 
 /**
- * itoa - converts integer to string
+ * ownItoa - converts integer to string
  * @num: input integer
  * Return: string type of number
  */
-char *itoa(unsigned int num)
+char *ownItoa(unsigned int num)
 {
   register int digits = 0;
   char *str;
