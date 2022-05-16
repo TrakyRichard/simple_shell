@@ -7,11 +7,11 @@
  */
 int _strlen(char *s)
 {
-  char *p = s;
+	char *p = s;
 
-  while (*s)
-    s++;
-  return (s - p);
+	while (*s)
+		s++;
+	return (s - p);
 }
 
 /**
@@ -22,12 +22,12 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-  char *ptr = dest + _strlen(dest);
+	char *ptr = dest + _strlen(dest);
 
-  while (*src)
-    *ptr++ = *src++;
-  *ptr = 0;
-  return (dest);
+	while (*src)
+		*ptr++ = *src++;
+	*ptr = 0;
+	return (dest);
 }
 
 /**
@@ -38,15 +38,14 @@ char *_strcat(char *dest, char *src)
  */
 int _strcmp(char *s1, char *s2)
 {
-  while (*s1)
-  {
-    if (*s1 != *s2)
-      break;
-    s1++;
-    s2++;
-  }
-
-  return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	while (*s1)
+	{
+		if (*s1 != *s2)
+			break;
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
 /**
@@ -57,22 +56,22 @@ int _strcmp(char *s1, char *s2)
  */
 char *_strdup(char *str)
 {
-  int i, len;
-  char *copy;
+	int i, len;
+	char *copy;
 
-  if (!str)
-    return (NULL);
-  len = _strlen(str);
-  copy = malloc(sizeof(char) * len + 1);
-  if (!copy)
-  {
-    perror("Malloc failed\n");
-    exit(errno);
-  }
-  for (i = 0; i < len; i++)
-    copy[i] = str[i];
-  copy[i] = 0;
-  return (copy);
+	if (!str)
+		return (NULL);
+	len = _strlen(str);
+	copy = malloc(sizeof(char) * len + 1);
+	if (!copy)
+	{
+		perror("Malloc failed\n");
+		exit(errno);
+	}
+	for (i = 0; i < len; i++)
+		copy[i] = str[i];
+	copy[i] = 0;
+	return (copy);
 }
 
 /**
@@ -84,12 +83,12 @@ char *_strdup(char *str)
  */
 char *_strcpy(char *dest, char *src)
 {
-  char *ptr = dest;
+	char *ptr = dest;
 
-  while (*src)
-    *dest++ = *src++;
-  *dest = 0;
-  return (ptr);
+	while (*src)
+		*dest++ = *src++;
+	*dest = 0;
+	return (ptr);
 }
 /**
  * _strtok - tokenizes strings at delimiter
@@ -100,22 +99,21 @@ char *_strcpy(char *dest, char *src)
 
 char *_strtok(char *str, char *delim)
 {
-  static char *lastptr;
-  char ch;
+	static char *lastptr;
+	char ch;
 
-  if (str == NULL)
-    str = lastptr;
-  do
-  {
-    ch = *str++;
-    if (!ch)
-      return (NULL);
-  } while (_strchr(delim, ch));
-  str--;
-  lastptr = str + _strcspn(str, delim);
-  if (*lastptr)
-    *lastptr++ = 0;
-  return (str);
+	if (str == NULL)
+		str = lastptr;
+	do {
+		ch = *str++;
+		if (!ch)
+			return (NULL);
+	} while (_strchr(delim, ch));
+	str--;
+	lastptr = str + _strcspn(str, delim);
+	if (*lastptr)
+		*lastptr++ = 0;
+	return (str);
 }
 
 /**
@@ -127,14 +125,14 @@ char *_strtok(char *str, char *delim)
  */
 int _strcspn(char *string, char *chars)
 {
-  char c;
-  char *p, *s;
+	char c;
+	char *p, *s;
 
-  for (s = string, c = *s; c; s++, c = *s)
-    for (p = chars; *p; p++)
-      if (c == *p)
-        return (s - string);
-  return (s - string);
+	for (s = string, c = *s; c; s++, c = *s)
+		for (p = chars; *p; p++)
+			if (c == *p)
+				return (s - string);
+	return (s - string);
 }
 
 /**
@@ -145,14 +143,14 @@ int _strcspn(char *string, char *chars)
  */
 char *_strchr(char *s, char c)
 {
-  char x;
+	char x;
 
-  while (true)
-  {
-    x = *s++;
-    if (x == c)
-      return (s - 1);
-    if (!x)
-      return (NULL);
-  }
+	while (true)
+	{
+		x = *s++;
+		if (x == c)
+			return (s - 1);
+		if (!x)
+			return (NULL);
+	}
 }
