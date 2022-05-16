@@ -10,25 +10,25 @@ void errorHandler(config *build)
 	static char error[BUFSIZE];
 	char *ptr, *alpha;
 
-	alpha = itoa(build->lineCounter);
-	_strcat(error, build->shellName);
-	_strcat(error, ": ");
-	_strcat(error, alpha);
-	_strcat(error, ": ");
-	_strcat(error, build->args[0]);
-	_strcat(error, getErrorMessage());
-	if (build->args[1])
-	{
-		if (errno != EBADCD)
-			_strcat(error, ": ");
-		_strcat(error, build->args[1]);
-	}
-	_strcat(error, "\n");
-	ptr = _strchr(error, '\n');
-	len = ptr - error;
-	write(STDERR_FILENO, error, len + 1);
-	free(alpha);
-	insertNullByte(error, 0);
+  alpha = ownItoa(build->lineCounter);
+  _strcat(error, build->shellName);
+  _strcat(error, ": ");
+  _strcat(error, alpha);
+  _strcat(error, ": ");
+  _strcat(error, build->args[0]);
+  _strcat(error, getErrorMessage());
+  if (build->args[1])
+  {
+    if (errno != EBADCD)
+      _strcat(error, ": ");
+    _strcat(error, build->args[1]);
+  }
+  _strcat(error, "\n");
+  ptr = _strchr(error, '\n');
+  len = ptr - error;
+  write(STDERR_FILENO, error, len + 1);
+  free(alpha);
+  insertNullByte(error, 0);
 }
 
 /**
