@@ -89,6 +89,7 @@ char *_strcpy(char *dest, char *src)
 		*dest++ = *src++;
 	*dest = 0;
 	return (ptr);
+<<<<<<< HEAD
 }
 /**
  * _strtok - tokenizes strings at delimiter
@@ -153,4 +154,6 @@ char *_strchr(char *s, char c)
 		if (!x)
 			return (NULL);
 	}
+=======
+>>>>>>> 1a61726838a9c52f4ebf7918737dcf946822205a
 }

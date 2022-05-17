@@ -86,14 +86,13 @@ char *_getenv(char *input, char **environ);
 /* error_handler */
 void errorHandler(config *build);
 unsigned int countDigits(int num);
-char *itoa(unsigned int num);
 char *getErrorMessage();
 
 /* built_in_helpers*/
 int countArgs(char **args);
 int _atoi(char *s);
 unsigned int countDigits(int num);
-char *itoa(unsigned int num);
+char *ownItoa(unsigned int num);
 int helpFunc(config *build);
 int displayHelpMenu(void);
 int helpExit(config *build);
