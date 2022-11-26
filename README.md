@@ -260,10 +260,8 @@ $
 ```
 
 ## Authors & Copyrights
-
-* Chinedu Ndubisi <[Nedudigital](https://github.com/Nedudigital)>
-* Ekwuribe Prince <[EPTunes](https://github.com/EPTunes)>
-
+trakyrichard
+aaboundi
 ## More information
 
 **Simple_Shell** is a simple shell unix command interpreter that is part of the ALX low level programming module at ALX SE Pregram and is intended to emulate the basics **sh** shell. All the information given in this README is based on the **simple_shell** and **bash** man (1) pages.
